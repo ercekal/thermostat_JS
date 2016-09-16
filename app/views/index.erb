@@ -3,8 +3,8 @@
 <head>
   <title>Thermostat</title>
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-  <script src="interface.js"></script>
-  <link rel="stylesheet" type="text/css" href="color.css">
+  <script src="../../public/interface.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../public/color.css">
 <div id="header_div">
   <h1>Welcome to the most advanced Thermostat of the Cosmos!</h1>
   <h2>You can easily use it with below buttons</h2></div>
@@ -13,8 +13,8 @@
   <h2 id="temperature"></h2>
   <input type="range" id="slider" min="10" value="20" max="32" step="1" onchange="showValue(this.value)">
 
-    <!-- <button id="increase">Increase Temperature</button>
-    <button id="decrease">Decrease Temperature</button> -->
+    <button id="increase">Increase Temperature</button>
+    <button id="decrease">Decrease Temperature</button>
     <button id="reset">Reset Temperature</button>
   <h2>Power saving status is : </h2><h2 id="powersavingstatus"></h2>
     <button id="powersaving">Power Saving</button>
@@ -29,7 +29,7 @@
     <option value="Antalya">Antalya</option>
     <option value="London">London</option>
   </select>
-  <script src="thermostat.js"></script>
+  <script src="../../public/thermostat.js"></script>
 
 </body>
 </html>
