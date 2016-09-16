@@ -15,14 +15,16 @@ Thermostat.prototype ={
   },
   increaseTemperature: function () {
     if(this._temperature >= this.currentPower()){
-      throw new Error("temperature cannot go above max limit.");
+      // throw new Error
+      alert("temperature cannot go above max limit.");
     } else {
       return this._temperature += 1;
 
     }},
     decreaseTemperature: function () {
       if (this._temperature <= this._minTemperature){
-        throw new Error("temperature cannot go below minimum.");
+        // throw new Error
+        alert("temperature cannot go below minimum.");
       } else {
         return this._temperature -= 1;
       }},
@@ -55,5 +57,10 @@ Thermostat.prototype ={
           };
 
           function showValue(newValue) {
-            document.getElementById('rosie').innerHTML = newValue;
+            console.log('1');
+            this._temperature = newValue;
+            console.log('2');
+            document.getElementById('temperature').innerHTML = this._temperature;
+
+
           }

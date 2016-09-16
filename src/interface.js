@@ -6,12 +6,15 @@ $(document).ready(function() {
 
   $('#cityselect').change(function(){
     var city = $('#cityselect').val();
-    var url = "http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=b15f5f9da7b49eb2b3f5c00b679f6db9"
+    var url = "http://api.openweathermap.org/data/2.5/weather?q="+city+"&apikey=ab3fb6e03b882629abec09934930699b";
     $.get(url, function(data) {
-      $('#current').text(Math.round(data.main.temp - 273));
+      $('#current').text(Math.round(data.main.temp-273));
     });
-    $('#city').text(city);
-  });
+      $('#citydisplay').text(city);
+    });
+
+// var new_temp = thermostat._temperature;
+// $('.range')
 
   $('#increase').click(function() {
     thermostat.increaseTemperature();
@@ -37,5 +40,11 @@ $(document).ready(function() {
     $('#temperature').text(thermostat._temperature);
     $('#temperature').attr('class', thermostat.displayEfficiency());
   }
+  $('#slider').on('slideToggle', function(event) {
+    console.log("hi");
+    event.preventDefault();
+    thermostat._temperature = 18;
+    updateTemperature();
+  });
 
 });
