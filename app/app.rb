@@ -3,6 +3,9 @@ require 'sinatra/base'
 require_relative 'data_mapper_setup'
 
 class MyApp < Sinatra::Base
+
+  set :public_folder, File.dirname(__FILE__) + '/public'
+  
   get '/' do
     erb :index
   end
